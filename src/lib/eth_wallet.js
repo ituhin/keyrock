@@ -4,7 +4,7 @@ require('dotenv').config();
 let Web3 = require('web3');
 let web3 = new Web3(new Web3.providers.HttpProvider( config.ethNode + process.env.ETHERSCAN_API_KEY ));
 
-
+console.log(config.ethNode + process.env.ETHERSCAN_API_KEY)
 
 module.exports = {};
 
@@ -38,7 +38,7 @@ params : {
 */
 module.exports.transaction = function(params){ 
 	return new Promise(function (resolve, reject){
-		if(!params.privateKey || !params.amount || !params.destination)
+		if(!params.privateKey || !params.amount || !params.destination || !(params.amount > 0) || !web3.utils.isAddress(params.destination))
 			return reject({code: 'INVALID_TRANSACTION_PARAMS'})
 
 		try {
