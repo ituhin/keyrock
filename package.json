@@ -8,7 +8,8 @@
     "build": "babel src -s -D -d dist --presets es2015,stage-0",
     "start": "node dist",
     "prestart": "npm run -s build",
-    "test": "eslint src"
+    "test": "eslint src",
+    "postinstall": "cp .env.sample .env"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
@@ -34,7 +35,8 @@
     "dotenv": "^5.0.1",
     "express": "^4.13.3",
     "morgan": "^1.8.0",
-    "resource-router-middleware": "^0.6.0"
+    "resource-router-middleware": "^0.6.0",
+    "web3": "^1.0.0-beta.33"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
