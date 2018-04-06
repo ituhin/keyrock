@@ -1,8 +1,8 @@
 import config from '../config.json';
 require('dotenv').config();
 
-let Web3 = require('web3');
-let web3 = new Web3(new Web3.providers.HttpProvider( config.ethNode + process.env.ETHERSCAN_API_KEY ));
+const Web3 = require('web3');
+const web3 = new Web3(new Web3.providers.HttpProvider( config.ethNode + process.env.ETHERSCAN_API_KEY ));
 
 console.log(config.ethNode + process.env.ETHERSCAN_API_KEY)
 
@@ -23,7 +23,7 @@ module.exports.getBalance = function(address){
 			if(!error){
 				resolve({address: address, balance: web3.utils.fromWei(result, 'ether'), unit: 'ether'})
 			} else {
-				console.log('getBalance-error: ', error.message); 
+				console.log('getBalance-error: ', error); 
 				reject({code: 'ETH_GET_BALANCE_ERROR', message: error.message})
 			}
 		})
