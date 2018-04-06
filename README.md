@@ -1,5 +1,7 @@
-Express & ES6 REST API Boilerplate
+Ethereum wallet management api (sample) using web3
 ==================================
+
+Built on top of git@github.com:developit/express-es6-rest-api.git
 
 This is a straightforward boilerplate for building REST APIs with ES6 and Express.
 
@@ -17,8 +19,8 @@ Getting Started
 
 ```sh
 # clone it
-git clone git@github.com:developit/express-es6-rest-api.git
-cd express-es6-rest-api
+git clone ***
+cd [***]
 
 # Make it your own
 rm -rf .git && git init && npm init
